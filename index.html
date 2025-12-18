@@ -7,6 +7,7 @@
   <title>Winlandia.io - Neumorphism</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <!-- Tailwind CSS -->
@@ -17,6 +18,7 @@
         extend: {
           fontFamily: {
             sans: ['"Sansita Swashed"', 'cursive'],
+            nunito: ['Nunito', 'sans-serif'],
           },
           colors: {
             'neu-bg': '#e0e5ec',
@@ -52,7 +54,7 @@
         </a>
 
         <!-- Desktop Nav -->
-        <ul class="hidden lg:flex gap-2 list-none">
+        <ul class="hidden lg:flex gap-2 list-none font-nunito">
           <li><a href="#"
               class="no-underline text-white font-semibold text-sm tracking-wide uppercase transition-all border border-transparent p-2 rounded-lg hover:border-white">UUTISET</a>
           </li>
@@ -625,7 +627,7 @@
 
   <!-- Footer -->
   <footer class="py-10">
-    <div class="container mx-auto px-5 max-w-[1200px]">
+    <div class="container mx-auto px-5 max-w-[1200px] font-nunito">
       <div
         class="bg-[#19334f] shadow-neu-flat rounded-2xl border border-white/20 px-6 py-4 flex flex-col lg:flex-row justify-between items-center gap-6">
 
