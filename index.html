@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Winlandia.io - Neumorphism</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <!-- Tailwind CSS -->
@@ -17,7 +16,7 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Nunito', 'sans-serif'],
+            sans: ['"Sansita Swashed"', 'cursive'],
           },
           colors: {
             'neu-bg': '#e0e5ec',
@@ -47,7 +46,8 @@
       <nav
         class="bg-[#19334f] shadow-neu-flat rounded-[20px] border border-white/20 px-8 py-4 flex justify-between items-center">
         <!-- Logo -->
-        <a href="https://www.linkedin.com/in/romanza-hendra-bayu-40819211a/" class="text-lg md:text-2xl font-extrabold text-white flex items-center gap-2.5 tracking-wide">
+        <a href="https://www.linkedin.com/in/romanza-hendra-bayu-40819211a/"
+          class="text-lg md:text-2xl font-extrabold text-white flex items-center gap-2.5 tracking-wide">
           <img class="md:w-[200px] md:h-[35px] w-[150px] h-[25px]" src="images/winlandia.png" alt="">
         </a>
 
@@ -130,22 +130,19 @@
           class="bg-[url('images/beach.jpg')] bg-cover bg-center shadow-neu-flat rounded-[20px] border border-white/20 p-8 lg:p-10 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:h-[600px] md:h-[500px] h-[800px]">
           <!-- Left: Text Content -->
           <div class="flex-1">
-            <span
-              class="inline-block px-2 md:px-4 py-2 text-sm font-bold text-blue-700 rounded-full mb-5 bg-neu-bg hover:-translate-y-2 active:shadow-neu-btn-active active:translate-y-px transition-all duration-300">iGaming
-              Finland</span>
             <div class="bg-white/20 backdrop-blur-[2px] p-4 rounded-2xl">
-              <h1 class="text-3xl lg:text-[2.5rem] font-extrabold text-neu-accent text-gray-700 mb-6 leading-tight">Riippumaton
+              <h1 class="text-3xl lg:text-[2.5rem] font-extrabold text-gray-700 mb-6 leading-tight">Riippumaton
                 tietolähde suomalaisesta iGaming-toimialasta</h1>
-                <p class="mb-8 text-neu-text text-gray-900">
-                  Winlandia.io käsittelee rahapelaamiseen liittyviä teemoja analyyttisesti ja ilman kaupallista
-                  sidonnaisuutta.
-                  Sivusto julkaisee uutisia, asiantuntijatietoa ja taustoittavia artikkeleita, jotka auttavat hahmottamaan
-                  toimialaa ja siinä tapahtuvaa muutosta erityisesti suomalaisen sääntelyn näkökulmasta.
-                </p>
+              <p class="mb-8 text-neu-text text-gray-900">
+                Winlandia.io käsittelee rahapelaamiseen liittyviä teemoja analyyttisesti ja ilman kaupallista
+                sidonnaisuutta.
+                Sivusto julkaisee uutisia, asiantuntijatietoa ja taustoittavia artikkeleita, jotka auttavat hahmottamaan
+                toimialaa ja siinä tapahtuvaa muutosta erityisesti suomalaisen sääntelyn näkökulmasta.
+              </p>
             </div>
             <div class="mt-8">
               <a href="#"
-                class="inline-block px-8 py-3 text-neu-accent font-bold bg-neu-bg rounded-full shadow-neu-btn hover:-translate-y-0.5 hover:shadow-neu-btn-hover active:translate-y-px active:shadow-neu-btn-active transition-all duration-300">Lue
+                class="inline-block px-8 py-3 font-bold bg-neu-bg rounded-full shadow-neu-btn hover:-translate-y-0.5 hover:shadow-neu-btn-hover active:translate-y-px active:shadow-neu-btn-active transition-all duration-300">Lue
                 lisää</a>
             </div>
           </div>
@@ -635,18 +632,36 @@
         <!-- Links -->
         <ul
           class="grid grid-cols-2 md:flex flex-wrap justify-center gap-2 lg:gap-6 text-xs sm:text-sm font-bold text-white pt-4 md:pt-6 lg:pt-0">
-          <li><div class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">Tietoa
-              meistä</div></li>
-          <li><div class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">Tiimi</div>
+          <li>
+            <div
+              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">
+              Tietoa
+              meistä</div>
           </li>
-          <li><div
-              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">Yhteystiedot</div></li>
-          <li><div
-              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">Vastuuvapaus</a></li>
-          <li><div
-              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">Vastuullisuus</a></li>
-          <li><div
-              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">Tietosuojaseloste</a>
+          <li>
+            <div
+              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">
+              Tiimi</div>
+          </li>
+          <li>
+            <div
+              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">
+              Yhteystiedot</div>
+          </li>
+          <li>
+            <div
+              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">
+              Vastuuvapaus</a>
+          </li>
+          <li>
+            <div
+              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">
+              Vastuullisuus</a>
+          </li>
+          <li>
+            <div
+              class="px-3 py-2 rounded-full hover:bg-[#19334f] hover:shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all">
+              Tietosuojaseloste</a>
           </li>
         </ul>
 
