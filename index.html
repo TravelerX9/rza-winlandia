@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winlandia.io - Neumorphism</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Nunito', 'sans-serif'],
+          },
+          colors: {
+            'neu-bg': '#e0e5ec',
+            'neu-text': '#4a5568',
+            'neu-accent': '#2d3748',
+          },
+          boxShadow: {
+            'neu-flat': '9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff',
+            'neu-pressed': 'inset 6px 6px 10px #a3b1c6, inset -6px -6px 10px #ffffff',
+            'neu-btn': '6px 6px 10px #a3b1c6, -6px -6px 10px #ffffff',
+            'neu-btn-hover': '8px 8px 12px #a3b1c6, -8px -8px 12px #ffffff',
+            'neu-btn-active': 'inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff',
+          }
+        }
+      }
+    }
+  </script>
+
+
+</head>
+
+<body class="bg-neu-bg text-neu-text min-h-screen leading-relaxed">
+
+  <!-- Header / Navigation -->
+  <header class="py-5 mb-10 relative z-50">
+    <div class="container mx-auto px-5 max-w-[1200px]">
+      <nav
+        class="bg-[#19334f] shadow-neu-flat rounded-[20px] border border-white/20 px-8 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-lg md:text-2xl font-extrabold text-white flex items-center gap-2.5 tracking-wide">
+          <i class="fas fa-snowflake text-white"></i>
+          WINLANDIA.IO
+        </div>
+
+        <!-- Desktop Nav -->
+        <ul class="hidden lg:flex gap-2 list-none">
+          <li><a href="#"
+              class="no-underline text-white font-semibold text-sm tracking-wide uppercase transition-all border border-transparent p-2 rounded-lg hover:border-white">UUTISET</a>
+          </li>
+          <li><a href="#"
+              class="no-underline text-white font-semibold text-sm tracking-wide uppercase transition-all border border-transparent p-2 rounded-lg hover:border-white">ANALYYSIT</a>
+          </li>
+          <li><a href="#"
+              class="no-underline text-white font-semibold text-sm tracking-wide uppercase transition-all border border-transparent p-2 rounded-lg hover:border-white">OPPAAT</a>
+          </li>
+          <li><a href="#"
+              class="no-underline text-white font-semibold text-sm tracking-wide uppercase transition-all border border-transparent p-2 rounded-lg hover:border-white">LAINSÄÄDÄNTÖ</a>
+          </li>
+          <li><a href="#"
+              class="no-underline text-white font-semibold text-sm tracking-wide uppercase transition-all border border-transparent p-2 rounded-lg hover:border-white">TEKNOLOGIA</a>
+          </li>
+          <li><a href="#"
+              class="no-underline text-white font-semibold text-sm tracking-wide uppercase transition-all border border-transparent p-2 rounded-lg hover:border-white">VIERASKYNÄT</a>
+          </li>
+          <li><a href="#"
+              class="no-underline text-white font-semibold text-sm tracking-wide uppercase transition-all border border-transparent p-2 rounded-lg hover:border-white">MIELIPIDE</a>
+          </li>
+        </ul>
+
+        <!-- Mobile Actions -->
+        <div class="flex gap-4">
+          <button
+            class="w-[45px] h-[45px] flex items-center justify-center rounded-full text-neu-accent bg-neu-bg shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all duration-300 cursor-pointer hover:text-blue-700">
+            <i class="fas fa-search"></i>
+          </button>
+          <button id="mobile-menu-btn"
+            class="w-[45px] h-[45px] flex items-center justify-center rounded-full text-neu-accent bg-neu-bg shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all duration-300 cursor-pointer hover:text-blue-700 lg:hidden">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu"
+        class="hidden absolute top-24 left-0 w-full z-40 px-5 transition-all duration-300 ease-in-out transform origin-top lg:hidden">
+        <div class="bg-neu-bg rounded-[20px] border border-gray-400 p-6 flex flex-col gap-4">
+          <a href="#"
+            class="block text-center w-full py-3 rounded-[15px] text-neu-accent font-bold bg-neu-bg shadow-neu-flat active:shadow-neu-pressed transition-all duration-300 hover:text-blue-700">UUTISET</a>
+          <a href="#"
+            class="block text-center w-full py-3 rounded-[15px] text-neu-accent font-bold bg-neu-bg shadow-neu-flat active:shadow-neu-pressed transition-all duration-300 hover:text-blue-700">ANALYYSIT</a>
+          <a href="#"
+            class="block text-center w-full py-3 rounded-[15px] text-neu-accent font-bold bg-neu-bg shadow-neu-flat active:shadow-neu-pressed transition-all duration-300 hover:text-blue-700">OPPAAT</a>
+          <a href="#"
+            class="block text-center w-full py-3 rounded-[15px] text-neu-accent font-bold bg-neu-bg shadow-neu-flat active:shadow-neu-pressed transition-all duration-300 hover:text-blue-700">LAINSÄÄDÄNTÖ</a>
+          <a href="#"
+            class="block text-center w-full py-3 rounded-[15px] text-neu-accent font-bold bg-neu-bg shadow-neu-flat active:shadow-neu-pressed transition-all duration-300 hover:text-blue-700">TEKNOLOGIA</a>
+          <a href="#"
+            class="block text-center w-full py-3 rounded-[15px] text-neu-accent font-bold bg-neu-bg shadow-neu-flat active:shadow-neu-pressed transition-all duration-300 hover:text-blue-700">VIERASKYNÄT</a>
+          <a href="#"
+            class="block text-center w-full py-3 rounded-[15px] text-neu-accent font-bold bg-neu-bg shadow-neu-flat active:shadow-neu-pressed transition-all duration-300 hover:text-blue-700">MIELIPIDE</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-5 max-w-[1200px]">
+    <section class="flex items-center min-h-[80vh]">
+      <div class="items-center w-full">
+        <!-- Text Content -->
+        <div
+          class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-8 lg:p-10 relative z-10 flex flex-col lg:flex-row items-center gap-12">
+          <!-- Left: Text Content -->
+          <div class="flex-1">
+            <span
+              class="inline-block px-4 py-2 text-sm font-bold text-blue-700 rounded-full mb-5 shadow-neu-pressed">iGaming
+              Finland</span>
+            <h1 class="text-3xl lg:text-[2.5rem] font-extrabold text-neu-accent mb-6 leading-tight">Riippumaton
+              tietolähde suomalaisesta iGaming-toimialasta</h1>
+            <p class="mb-8 text-neu-text">
+              Winlandia.io käsittelee rahapelaamiseen liittyviä teemoja analyyttisesti ja ilman kaupallista
+              sidonnaisuutta.
+              Sivusto julkaisee uutisia, asiantuntijatietoa ja taustoittavia artikkeleita, jotka auttavat hahmottamaan
+              toimialaa ja siinä tapahtuvaa muutosta erityisesti suomalaisen sääntelyn näkökulmasta.
+            </p>
+            <div class="mt-8">
+              <a href="#"
+                class="inline-block px-8 py-3 text-neu-accent font-bold bg-neu-bg rounded-full shadow-neu-btn hover:-translate-y-0.5 hover:shadow-neu-btn-hover active:translate-y-px active:shadow-neu-btn-active transition-all duration-300">Lue
+                lisää</a>
+            </div>
+          </div>
+
+          <!-- Right: Image -->
+          <div
+            class="flex-1 w-full max-w-md aspect-square relative overflow-hidden flex items-center justify-center bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-2">
+            <img src="images/verkkouutiset.webp" alt="Winlandia Hero Image"
+              class="w-50 h-50 object-cover rounded-[15px]">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Main 2-Column Layout -->
+    <section class="py-10 pb-20">
+      <div class="container mx-auto px-5 max-w-[1200px]">
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+          <!-- Left Column: Main Content (2/3 width) -->
+          <div class="lg:col-span-2">
+
+            <!-- News Section -->
+            <div class="mb-16">
+              <h2 class="text-[1.75rem] font-extrabold text-neu-accent mb-10 pl-2 border-l-4 border-blue-700">
+                Ajankohtaista</h2>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Card 1 -->
+                <article class="group cursor-pointer">
+                  <div
+                    class="w-full aspect-video bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-2 mb-6 transition-transform duration-300 group-hover:-translate-y-2">
+                    <img src="images/Vieraskynät.jpg" alt="Vieraskynät"
+                      class="w-full h-full object-cover rounded-[15px]">
+                  </div>
+                  <div class="px-2">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                      VIERASKYNÄT <span class="mx-2 text-gray-400">|</span> 12/2025
+                    </div>
+                    <h3
+                      class="text-lg font-bold text-neu-accent leading-snug group-hover:text-blue-700 transition-colors">
+                      <a href="#"
+                        class="border-b-2 border-transparent group-hover:border-blue-700 pb-0.5 transition-all">
+                        iGaming SEO - asiantuntija varoittaa Suomea toistamasta Ruotsin virheitä
+                      </a>
+                    </h3>
+                  </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="group cursor-pointer">
+                  <div
+                    class="w-full aspect-video bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-2 mb-6 transition-transform duration-300 group-hover:-translate-y-2">
+                    <img src="images/Uutiset.jpg" alt="Uutiset" class="w-full h-full object-cover rounded-[15px]">
+                  </div>
+                  <div class="px-2">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                      UUTISET <span class="mx-2 text-gray-400">|</span> 12/2025
+                    </div>
+                    <h3
+                      class="text-lg font-bold text-neu-accent leading-snug group-hover:text-blue-700 transition-colors">
+                      <a href="#"
+                        class="border-b-2 border-transparent group-hover:border-blue-700 pb-0.5 transition-all">
+                        Eduskunta hylkäsi opposition kiristysesitykset, Suomen pelilaki etenee lähes alkuperäisessä
+                        muodossaan
+                      </a>
+                    </h3>
+                  </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="group cursor-pointer">
+                  <div
+                    class="w-full aspect-video bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-2 mb-6 transition-transform duration-300 group-hover:-translate-y-2">
+                    <img src="images/Uutiset2.jpg" alt="Uutiset" class="w-full h-full object-cover rounded-[15px]">
+                  </div>
+                  <div class="px-2">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                      UUTISET <span class="mx-2 text-gray-400">|</span> 12/2025
+                    </div>
+                    <h3
+                      class="text-lg font-bold text-neu-accent leading-snug group-hover:text-blue-700 transition-colors">
+                      <a href="#"
+                        class="border-b-2 border-transparent group-hover:border-blue-700 pb-0.5 transition-all">
+                        Opposition ehdotukset voisivat kiristää Suomen tulevaa lisenssimarkkinaa
+                      </a>
+                    </h3>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+
+            <!-- Guides Section -->
+            <div>
+              <h2 class="text-[1.75rem] font-extrabold text-neu-accent mb-10 pl-2 border-l-4 border-blue-700">Oppaat &
+                artikkelit</h2>
+
+              <!-- Article 1 -->
+              <article
+                class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-2 lg:p-4 group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                <div
+                  class="w-full aspect-video lg:aspect-[21/9] bg-neu-bg rounded-[15px] overflow-hidden mb-6 relative">
+                  <img src="images/oppaat.jpg" alt="Pöytäpelien opas" class="w-full h-full object-cover">
+                </div>
+                <div class="px-4 pb-6">
+                  <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">
+                    <span class="bg-neu-accent text-white px-2 py-1 rounded text-[10px] mr-2">OPPAAT</span> 11/2025
+                  </div>
+                  <h3
+                    class="text-2xl lg:text-3xl font-extrabold text-neu-accent mb-4 leading-tight group-hover:text-blue-700 transition-colors">
+                    Miten pöytäpelien palautusprosentti oikeasti toimii ja miksi talo voittaa aina?
+                  </h3>
+                  <p class="text-neu-text mb-6 leading-relaxed max-w-4xl">
+                    Tämä opas avaa selkeästi, mistä pöytäpelien palautusprosentti syntyy, miten talon etu rakentuu ja
+                    miksi pieniltäkin tuntuvat sääntömuutokset voivat muuttaa pelaajan mahdollisuuksia merkittävästi.
+                    Tarkastelemme erityisesti rulettia, blackjackia ja baccarat'ta peleinä, jotka näyttävät
+                    yksinkertaisilta mutta kätkevät taakseen hyvin tarkkaan rakennetun matemaattisen perustan.
+                  </p>
+                  <a href="#"
+                    class="text-blue-700 font-bold border-b-2 border-transparent hover:border-blue-700 transition-all inline-flex items-center gap-2">
+                    Lue koko opas <span class="text-gray-500 font-normal text-sm no-underline border-0">(lukuaika n. 4
+                      minuuttia)</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Article 2 -->
+              <article
+                class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-2 lg:p-4 mt-8 group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                <div
+                  class="w-full aspect-video lg:aspect-[21/9] bg-neu-bg rounded-[15px] overflow-hidden mb-6 relative">
+                  <img src="images/oppaat2.jpg" alt="RTP Opas" class="w-full h-full object-cover">
+                </div>
+                <div class="px-4 pb-6">
+                  <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">
+                    <span class="bg-neu-accent text-white px-2 py-1 rounded text-[10px] mr-2">OPPAAT</span> 11/2025
+                  </div>
+                  <h3
+                    class="text-2xl lg:text-3xl font-extrabold text-neu-accent mb-4 leading-tight group-hover:text-blue-700 transition-colors">
+                    Mitä RTP tarkoittaa? Rehellinen ja selkeä opas palautusprosenttiin
+                  </h3>
+                  <p class="text-neu-text mb-6 leading-relaxed max-w-4xl">
+                    RTP eli Return to Player, suomeksi palautusprosentti, on yksi nettikasinoiden tunnetuimmista
+                    käsitteistä. Sitä käytetään kuvaamaan, kuinka paljon peli palauttaa panoksista takaisin pelaajille
+                    pitkällä aikavälillä. Usein RTP:stä syntyy mielikuva, että jos pelin palautusprosentti on 95 %,
+                    pelaaja saisi keskimäärin 95 euroa takaisin jokaista sataa pelattua euroa kohti.
+                  </p>
+                  <a href="#"
+                    class="text-blue-700 font-bold border-b-2 border-transparent hover:border-blue-700 transition-all inline-flex items-center gap-2">
+                    Lue koko opas <span class="text-gray-500 font-normal text-sm no-underline border-0">(lukuaika n. 7
+                      minuuttia)</span>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Article 3 -->
+              <article
+                class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-2 lg:p-4 mt-8 group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                <div
+                  class="w-full aspect-video lg:aspect-[21/9] bg-neu-bg rounded-[15px] overflow-hidden mb-6 relative">
+                  <img src="images/oppaat3.jpg" alt="UKK ja rahapelit" class="w-full h-full object-cover">
+                </div>
+                <div class="px-4 pb-6">
+                  <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">
+                    <span class="bg-neu-accent text-white px-2 py-1 rounded text-[10px] mr-2">OPPAAT</span> 11/2025
+                  </div>
+                  <h3
+                    class="text-2xl lg:text-3xl font-extrabold text-neu-accent mb-4 leading-tight group-hover:text-blue-700 transition-colors">
+                    Usein kysyttyä rahapeleistä ja nettikasinoista Suomessa
+                  </h3>
+                  <p class="text-neu-text mb-6 leading-relaxed max-w-4xl">
+                    Tämä UKK-kooste vastaa niihin kysymyksiin, jotka suomalaiset yleensä googlaavat rahapeleistä,
+                    lisenssijärjestelmästä, verotuksesta ja nettikasinoiden toiminnasta.
+                    <br><br>
+                    Vastaukset ovat neutraaleja, faktoihin perustuvia eikä niissä ole markkinointisisältöä.
+                  </p>
+                  <a href="#"
+                    class="text-blue-700 font-bold border-b-2 border-transparent hover:border-blue-700 transition-all inline-flex items-center gap-2">
+                    Lue koko UKK <span class="text-gray-500 font-normal text-sm no-underline border-0">(lukuaika n. 5
+                      minuuttia)</span>
+                  </a>
+                </div>
+              </article>
+
+            </div>
+
+          </div>
+
+          <!-- Right Column: Sidebar (1/3 width) -->
+          <div class="lg:col-span-1">
+            <div class="sticky top-24 flex flex-col gap-8">
+
+              <!-- Newsletter Widget -->
+              <div class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-8">
+                <h3 class="text-2xl font-extrabold text-neu-accent mb-4">Tilaa uutiskirje</h3>
+                <p class="text-neu-text mb-8">Pysy ajan tasalla iGaming-alan muutoksista ja suomalaisesta
+                  lisenssijärjestelmästä.</p>
+
+                <form class="flex flex-col gap-5">
+                  <div class="relative">
+                    <input type="email" placeholder="Sähköpostiosoite"
+                      class="w-full bg-neu-bg shadow-neu-pressed rounded-lg px-6 py-4 outline-none text-neu-text placeholder-gray-400 focus:ring-2 focus:ring-blue-500/50 transition-all">
+                  </div>
+                  <p class="text-xs text-gray-500 leading-tight">
+                    Ilmoittamalla sähköpostiosoitteen sallit uutiskirjeiden vastaanottamisen, mutta voit perua niiden
+                    vastaanottamisen milloin haluat.
+                  </p>
+                  <button type="submit"
+                    class="w-full py-4 bg-[#19334f] text-white font-bold rounded-lg shadow-neu-flat hover:scale-[1.02] active:scale-[0.98] transition-all flex justify-center items-center gap-2">
+                    Tilaa
+                    <i class="fas fa-arrow-right text-sm"></i>
+                  </button>
+                </form>
+              </div>
+
+              <!-- Most Popular Widget -->
+              <div class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-8">
+                <h3 class="text-2xl font-extrabold text-neu-accent mb-6 border-b border-gray-200 pb-4">Suosituimmat</h3>
+                <div class="flex flex-col gap-6">
+
+                  <div class="flex gap-4">
+                    <div
+                      class="w-8 h-8 rounded-full bg-gray-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-neu-flat">
+                      1</div>
+                    <div>
+                      <div class="font-bold text-neu-accent text-sm mb-1">Oppaat</div>
+                      <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                        Vastuullinen pelaaminen, mitä Suomen uusi malli tarkoittaa käytännössä?
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div
+                      class="w-8 h-8 rounded-full bg-gray-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-neu-flat">
+                      2</div>
+                    <div>
+                      <div class="font-bold text-neu-accent text-sm mb-1">Analyysit</div>
+                      <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                        Miksi Suomi on nyt Euroopan kuumin rahapelimarkkina
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div
+                      class="w-8 h-8 rounded-full bg-gray-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-neu-flat">
+                      3</div>
+                    <div>
+                      <div class="font-bold text-neu-accent text-sm mb-1">Analyysit</div>
+                      <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                        Kuinka suuri rahapeliala oikeasti on?
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div
+                      class="w-8 h-8 rounded-full bg-gray-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-neu-flat">
+                      4</div>
+                    <div>
+                      <div class="font-bold text-neu-accent text-sm mb-1">Mielipide</div>
+                      <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                        Veikkauksen kritisoiminen ei ole hyökkäys vaan velvollisuus
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div
+                      class="w-8 h-8 rounded-full bg-gray-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-neu-flat">
+                      5</div>
+                    <div>
+                      <div class="font-bold text-neu-accent text-sm mb-1">Oppaat</div>
+                      <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                        Suomen uusi rahapelilisenssi 2027 — mitä oikeasti on tulossa?
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Latest News Widget -->
+              <div class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-8">
+                <h3 class="text-2xl font-extrabold text-neu-accent mb-6 border-b border-gray-200 pb-4">Tuoreimmat</h3>
+                <div class="flex flex-col gap-6">
+
+                  <div class="flex flex-col">
+                    <div class="flex gap-2 items-baseline mb-1">
+                      <span class="text-gray-500 font-medium text-sm">15.12.</span>
+                      <span class="text-neu-accent font-bold text-sm">Vieraskynät</span>
+                    </div>
+                    <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                      iGaming SEO - asiantuntija varoittaa Suomea toistamasta Ruotsin virheitä
+                    </a>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <div class="flex gap-2 items-baseline mb-1">
+                      <span class="text-gray-500 font-medium text-sm">13.12.</span>
+                      <span class="text-neu-accent font-bold text-sm">Uutiset</span>
+                    </div>
+                    <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                      Eduskunta hylkäsi opposition kiristysesitykset, Suomen pelilaki etenee lähes alkuperäisessä
+                      muodossaan
+                    </a>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <div class="flex gap-2 items-baseline mb-1">
+                      <span class="text-gray-500 font-medium text-sm">08.12.</span>
+                      <span class="text-neu-accent font-bold text-sm">Uutiset</span>
+                    </div>
+                    <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                      Opposition ehdotukset voisivat kiristää Suomen tulevaa lisenssimarkkinaa
+                    </a>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <div class="flex gap-2 items-baseline mb-1">
+                      <span class="text-gray-500 font-medium text-sm">03.12.</span>
+                      <span class="text-neu-accent font-bold text-sm">Uutiset</span>
+                    </div>
+                    <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                      Suomen lisenssimarkkinan avautuminen saattaa viivästyä
+                    </a>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <div class="flex gap-2 items-baseline mb-1">
+                      <span class="text-gray-500 font-medium text-sm">03.12.</span>
+                      <span class="text-neu-accent font-bold text-sm">Analyysit</span>
+                    </div>
+                    <a href="#" class="text-neu-text text-sm hover:text-blue-700 transition-colors leading-snug">
+                      Suomi menestyy tasa-arvossa – mutta miten iGaming-ala vertautuu siihen?
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-10 pb-20">
+      <div class="container mx-auto px-5 max-w-[1200px]">
+        <h2 class="text-[1.75rem] font-extrabold text-neu-accent mb-6 pl-2 border-l-4 border-blue-700">Winlandia.io —
+          Tiimimme</h2>
+        <p class="text-neu-text mb-10 leading-relaxed max-w-3xl">
+          Winlandia.io toimii avoimesti. Sivustoa ei ylläpidä anonyymi taho, vaan tiimi, joka on työskennellyt
+          iGaming-alalla yli 20 vuotta.
+        </p>
+
+        <div class="flex flex-col gap-6 max-w-4xl">
+
+          <!-- Person 1 -->
+          <div
+            class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-4 flex flex-col sm:flex-row items-center gap-6 group hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 bg-neu-bg rounded-[15px] p-1 shadow-neu-pressed">
+              <img src="images/matti.jpg" alt="Matti"
+                class="w-full h-full object-cover rounded-[12px] opacity-80 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div class="text-center sm:text-left">
+              <h3 class="text-xl font-bold text-neu-accent mb-1">Matti, Julkaisija & päätoimittaja</h3>
+              <p class="text-neu-text">Toimituksellinen linja, analyysit, regulaatio, markkina.</p>
+            </div>
+          </div>
+
+          <!-- Person 2 -->
+          <div
+            class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-4 flex flex-col sm:flex-row items-center gap-6 group hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 bg-neu-bg rounded-[15px] p-1 shadow-neu-pressed">
+              <img src="images/otto.jpg" alt="Otto"
+                class="w-full h-full object-cover rounded-[12px] opacity-80 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div class="text-center sm:text-left">
+              <h3 class="text-xl font-bold text-neu-accent mb-1">Otto, Data & sisältö</h3>
+              <p class="text-neu-text">Tietopohjaiset oppaat, analytiikka, visuaalinen toteutus.</p>
+            </div>
+          </div>
+
+          <!-- Person 3 -->
+          <div
+            class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-4 flex flex-col sm:flex-row items-center gap-6 group hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 bg-neu-bg rounded-[15px] p-1 shadow-neu-pressed">
+              <img src="images/pipsa.jpg" alt="Pipsa"
+                class="w-full h-full object-cover rounded-[12px] opacity-80 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div class="text-center sm:text-left">
+              <h3 class="text-xl font-bold text-neu-accent mb-1">Pipsa, Brändi, sisältö & viestintä</h3>
+              <p class="text-neu-text">Tarinankerronta, brändi, käytännönläheinen näkökulma.</p>
+            </div>
+          </div>
+
+          <!-- Person 4 -->
+          <div
+            class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-4 flex flex-col sm:flex-row items-center gap-6 group hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 bg-neu-bg rounded-[15px] p-1 shadow-neu-pressed">
+              <img src="images/ville.jpg" alt="Ville"
+                class="w-full h-full object-cover rounded-[12px] opacity-80 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div class="text-center sm:text-left">
+              <h3 class="text-xl font-bold text-neu-accent mb-1">Ville, Visuaalinen ilme</h3>
+              <p class="text-neu-text">Kuvitus, grafiikka, some-tyyli ja brändi-identiteetti.</p>
+            </div>
+          </div>
+
+          <!-- Person 5 -->
+          <div
+            class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-4 flex flex-col sm:flex-row items-center gap-6 group hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 bg-neu-bg rounded-[15px] p-1 shadow-neu-pressed">
+              <img src="images/petri.jpg" alt="Petri"
+                class="w-full h-full object-cover rounded-[12px] opacity-80 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div class="text-center sm:text-left">
+              <h3 class="text-xl font-bold text-neu-accent mb-1">Petri, Tekninen arkkitehtuuri</h3>
+              <p class="text-neu-text">Sivuston rakentaminen, koodi, suorituskyky ja ylläpito.</p>
+            </div>
+          </div>
+
+          <!-- Link -->
+          <div class="mt-4">
+            <a href="#"
+              class="text-blue-700 font-bold border-b-2 border-transparent hover:border-blue-700 transition-all text-lg">
+              Tutustu koko tiimiin
+            </a>
+          </div>
+
+        </div>
+        <!-- Mission & Responsibility Sections -->
+        <section class="py-10">
+          <div class="container mx-auto px-5 max-w-[1200px]">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+              <!-- Mission -->
+              <div class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-8">
+                <h2 class="text-2xl font-extrabold text-neu-accent mb-6">Mikä on tehtävämme?</h2>
+                <p class="text-neu-text mb-4">Haluamme tarjota suomalaisille:</p>
+                <ul class="list-disc list-inside text-neu-text space-y-2 mb-6 ml-2">
+                  <li>faktaa ilman markkinointimelua</li>
+                  <li>oppaita ilman ohjailua</li>
+                  <li>tietoa ilman kaupallisia sumuikkunoita</li>
+                  <li>journalistisen otteen alaan, jota usein käsitellään pinnallisesti</li>
+                </ul>
+                <p class="text-neu-text leading-relaxed">
+                  Winlandia.io on rakennettu ihmisille, jotka haluavat ymmärtää, miten iGaming todella toimii — ilman,
+                  että heitä ohjataan pelaamaan.
+                </p>
+              </div>
+
+              <!-- Responsibility -->
+              <div class="bg-neu-bg shadow-neu-flat rounded-[20px] border border-white/20 p-8">
+                <h2 class="text-2xl font-extrabold text-neu-accent mb-6">Vastuullisuus</h2>
+                <ul class="list-disc list-inside text-neu-text space-y-2 mb-6 ml-2">
+                  <li>Emme tarjoa rahapelejä.</li>
+                  <li>Emme markkinoi kasinosivustoja.</li>
+                  <li>Emme myy linkkejä tai listauksia.</li>
+                  <li>Emme hyväksy alaikäisiä lukijoita sivuillemme.</li>
+                </ul>
+                <p class="text-neu-text mb-6">
+                  Julkaisemme tietoa, uutisia ja näkemyksiä analyyttisesti ja riippumattomasti.
+                </p>
+                <a href="#"
+                  class="text-blue-700 font-bold border-b-2 border-transparent hover:border-blue-700 transition-all">
+                  Lue lisää vastuullisuudesta
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10">
+    <div class="container mx-auto px-5 max-w-[1200px]">
+      <div
+        class="bg-[#19334f] shadow-neu-flat rounded-2xl border border-white/20 px-6 py-4 flex flex-col lg:flex-row justify-between items-center gap-6">
+
+        <!-- Links -->
+        <ul
+          class="grid grid-cols-2 md:flex flex-wrap justify-center gap-2 lg:gap-6 text-xs sm:text-sm font-bold text-white pt-4 md:pt-6 lg:pt-0">
+          <li><a href="#" class="px-3 py-2 rounded-full hover:bg-neu-bg hover:shadow-neu-flat transition-all">Tietoa
+              meistä</a></li>
+          <li><a href="#" class="px-3 py-2 rounded-full hover:bg-neu-bg hover:shadow-neu-flat transition-all">Tiimi</a>
+          </li>
+          <li><a href="#"
+              class="px-3 py-2 rounded-full hover:bg-neu-bg hover:shadow-neu-flat transition-all">Yhteystiedot</a></li>
+          <li><a href="#"
+              class="px-3 py-2 rounded-full hover:bg-neu-bg hover:shadow-neu-flat transition-all">Vastuuvapaus</a></li>
+          <li><a href="#"
+              class="px-3 py-2 rounded-full hover:bg-neu-bg hover:shadow-neu-flat transition-all">Vastuullisuus</a></li>
+          <li><a href="#"
+              class="px-3 py-2 rounded-full hover:bg-neu-bg hover:shadow-neu-flat transition-all">Tietosuojaseloste</a>
+          </li>
+        </ul>
+
+
+        <!-- RSS / Atom (Right side actions like search in image) -->
+        <div class="flex gap-4 items-center">
+          <a href="https://www.linkedin.com/in/romanza-hendra-bayu-40819211a/" target="_blank" rel="noopener noreferrer"
+            class="inline-block relative h-[50px] w-[50px] cursor-pointer z-10 hover:scale-110 transition-transform duration-300">
+            <div class="token-container w-full h-full">
+              <img src="images/logorza.svg" width="50" height="50" class="w-full h-full object-contain" alt="3D Logo">
+            </div>
+          </a>
+          <a href="#"
+            class="w-[80px] h-[40px] flex items-center justify-center rounded-2xl bg-[#19334f] shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] text-white hover:text-orange-400 transition-all hover:scale-105 gap-2"
+            title="RSS">RSS
+            <i class="fas fa-rss"></i>
+          </a>
+          <a href="#"
+            class="w-[80px] h-[40px] flex items-center justify-center rounded-2xl bg-[#19334f] shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] text-white hover:text-orange-400 transition-all hover:scale-105 gap-2"
+            title="Atom">Atom
+            <i class="fas fa-rss-square"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    /* Custom animations and 3D effects Logo 3D Animasi 2 */
+    @keyframes spinny-token-yayyy {
+
+      0%,
+      83.33% {
+        transform: rotateY(0deg);
+        animation-timing-function: ease-in-out;
+        /* Smooth spin start/end */
+      }
+
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    @keyframes thumb-thumb {
+
+      0%,
+      10%,
+      100% {
+        transform: scale(100%);
+      }
+
+      5% {
+        transform: scale(103%);
+      }
+
+      7% {
+        transform: scale(97%);
+      }
+    }
+
+    /* Token container with 3D animation */
+    .token-container {
+      transform-style: preserve-3d;
+      /* 15s pause + 3s spin = 18s total cycle */
+      animation: 8s spinny-token-yayyy infinite;
+    }
+
+    /* Layer styles for 3D effect - CRITICAL for 3D thickness */
+    .layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .layer img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Middle layers (thickness) - make them black */
+    .layer.middle img {
+      filter: brightness(0);
+    }
+  </style>
+
+  <script>  // Logo 3D script Animasi 3
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.token-container');
+      const originalImg = container.querySelector('img');
+
+      // Configuration
+      const thickness = 8; // ketebalan dalam pixels (dikurangi dari 20)
+      const layersCount = 20; // jumlah layer untuk ketebalan (dikurangi dari 15)
+
+      // Clone original image
+      const imgClone = originalImg.cloneNode(true);
+      container.innerHTML = '';
+
+      function createLayer(z, type) {
+        const div = document.createElement('div');
+        div.className = `layer ${type}`;
+        div.style.transform = `translateZ(${z}px)`;
+
+        const img = imgClone.cloneNode(true);
+        div.appendChild(img);
+
+        if (type === 'back') {
+          // Rotate back face 180deg agar menghadap keluar, dan flip horizontal untuk reverse
+          div.style.transform = `translateZ(${z}px) rotateY(180deg) scaleX(-1)`;
+        }
+
+        container.appendChild(div);
+      }
+
+      // Front Face (sisi depan)
+      createLayer(thickness / 2, 'front');
+
+      // Middle Layers (ketebalan hitam)
+      const step = thickness / layersCount;
+      for (let i = 1; i < layersCount; i++) {
+        const z = (thickness / 2) - (i * step);
+        createLayer(z, 'middle');
+      }
+
+      // Back Face (sisi belakang)
+      createLayer(-thickness / 2, 'back');
+    });
+  </script>
+
+  <!--===== PROTECTION WEBSITE =====-->
+  <script>
+    // Nonaktifkan klik kanan
+    window.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Nonaktifkan Ctrl+U, F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+S, Ctrl+P
+    document.addEventListener('keydown', function (e) {
+      // F12
+      if (e.keyCode === 123) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+U
+      if (e.ctrlKey && e.key.toLowerCase() === 'u') {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+I
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+J
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+S
+      if (e.ctrlKey && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+P
+      if (e.ctrlKey && e.key.toLowerCase() === 'p') {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Nonaktifkan drag
+    window.addEventListener('dragstart', function (e) {
+      e.preventDefault();
+    });
+  </script>
+</body>
+
+</html>
