@@ -44,9 +44,9 @@
 
   <!-- Header / Navigation -->
   <header class="py-5 mb-10 relative z-50">
-    <div class="container mx-auto px-5 max-w-[1200px]">
+    <div class="fixed top-0 left-0 right-0 container mx-auto px-5 max-w-[1200px]">
       <nav
-        class="bg-[#19334f] shadow-neu-flat rounded-[20px] border border-white/20 px-4 md:px-6 py-4 flex justify-between items-center">
+        class="bg-[#19334f] shadow-neu-flat rounded-[20px] border border-white/20 px-4 md:px-6 py-2 md:py-4 flex justify-between items-center">
         <!-- Logo -->
         <a href="https://www.linkedin.com/in/romanza-hendra-bayu-40819211a/"
           class="text-lg md:text-2xl font-extrabold text-white flex items-center gap-2.5 tracking-wide">
@@ -81,11 +81,11 @@
         <!-- Mobile Actions -->
         <div class="flex gap-4">
           <button
-            class="w-[45px] h-[45px] flex items-center justify-center rounded-full text-neu-accent bg-neu-bg shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all duration-300 cursor-pointer hover:text-blue-700">
+            class="w-[35px] h-[35px] flex items-center justify-center rounded-full text-neu-accent bg-neu-bg shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all duration-300 cursor-pointer hover:text-blue-700">
             <i class="fas fa-search"></i>
           </button>
           <button id="mobile-menu-btn"
-            class="w-[45px] h-[45px] flex items-center justify-center rounded-full text-neu-accent bg-neu-bg shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all duration-300 cursor-pointer hover:text-blue-700 lg:hidden">
+            class="w-[35px] h-[35px] flex items-center justify-center rounded-full text-neu-accent bg-neu-bg shadow-[5px_5px_10px_#122438,-5px_-5px_10px_#29507d] transition-all duration-300 cursor-pointer hover:text-blue-700 lg:hidden">
             <i class="fas fa-bars"></i>
           </button>
         </div>
@@ -93,7 +93,7 @@
 
       <!-- Mobile Menu Dropdown -->
       <div id="mobile-menu"
-        class="hidden absolute top-28 left-0 w-full z-40 px-5 transition-all duration-300 ease-in-out transform origin-top lg:hidden">
+        class="hidden absolute top-16 left-0 w-full z-40 px-5 transition-all duration-300 ease-in-out transform origin-top lg:hidden">
         <div class="bg-neu-bg rounded-[20px] border border-gray-400 p-6 flex flex-col gap-4 font-nunito">
           <a href="#"
             class="block text-center w-full py-3 rounded-[15px] text-neu-accent font-bold bg-neu-bg shadow-neu-flat active:shadow-neu-pressed transition-all duration-300 hover:text-blue-700">UUTISET</a>
@@ -124,7 +124,7 @@
   </script>
 
   <!-- Main Content -->
-  <main class="container mx-auto px-5 max-w-[1200px]">
+  <main class="container mx-auto px-5 max-w-[1200px] pt-10">
     <section class="flex items-center pb-6">
       <div class="items-center w-full">
         <!-- Text Content -->
